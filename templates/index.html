@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1> Hola {{ nombre }}!</h1>
+<div>
+    Microblog:
+    <a href="{{ url_for('index') }}">Home</a>
+    {% if current_user.is_anonymous %}
+    <a href="{{ url_for('login') }}">Login</a>
+    {% else %}
+    <a href="{{ url_for('logout') }}">Logout</a>
+    {% endif %}
+</div>
+
+
+{% endblock %}
